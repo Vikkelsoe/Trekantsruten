@@ -2,14 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
     public int nextScene;
     public bool additive;
+    public Button btn;
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    private void Start()
+    {
+        btn = btn.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
+    }
+
+    // TaskOnClick is called When the Button is clicked
+    void TaskOnClick()
     {
         if (additive)
         {
