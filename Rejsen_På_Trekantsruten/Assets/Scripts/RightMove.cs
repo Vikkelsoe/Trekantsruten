@@ -15,7 +15,7 @@ public class RightMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (ispressed)
         {
-            player.transform.Translate(2.0f * Time.deltaTime, 0, 0);
+            player.transform.Translate(1.5f * Time.deltaTime, 0, 0);
         }
         
     }
@@ -35,7 +35,7 @@ public class RightMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (ispressed)
         {
             Debug.Log("Right");
-            player.transform.Translate(-2.0f * Time.deltaTime, 0, 0);
+            player.transform.Translate(-2f * Time.deltaTime, 0, 0);
         }
     }
 
