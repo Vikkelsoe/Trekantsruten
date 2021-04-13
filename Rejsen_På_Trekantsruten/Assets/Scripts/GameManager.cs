@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +13,20 @@ public class GameManager : MonoBehaviour
     public static int usedMap = 0;
     public GameObject winScreen;
     public GameObject mapCounterText;
+    public GameObject timeText;
 
+    float timer = 0;
+
+    
+
+    /*public static async Task ExampleAsync()
+    {
+        string[] jigsawHigh =
+        {
+            "1", "2", "3"
+        };
+        File.AppendAllLines("Jigsaw_Highscores.txt", jigsawHigh);
+    }*/
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +42,14 @@ public class GameManager : MonoBehaviour
         {
             winScreen.SetActive(true);
             mapCounterText.GetComponent<Text>().text = "Du har brugt \"Vis Kort\" " + usedMap + " gange.";
+            float time = 0;
+            time = timer;
+            mapCounterText.GetComponent<Text>().text = "Du har brugt " + time + " sekunder.";
+            Jigsaw_Highscore.time = timer;
+        }
+        if (lockedPieces != 36)
+        {
+            timer += Time.deltaTime;
         }
     }
 }
