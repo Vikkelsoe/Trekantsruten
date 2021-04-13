@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Jigsaw_Movement : MonoBehaviour
 {
     public string pieceStatus = "idle";
     public bool checkPlacement = false;
+    AudioSource audioPlaced;
+
+    void Start()
+    {
+        audioPlaced = this.GetComponent<AudioSource>();
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,6 +42,7 @@ public class Jigsaw_Movement : MonoBehaviour
         {
             checkPlacement = false;
             GameManager.lockedPieces++;
+            audioPlaced.Play();
         }
     }
 
