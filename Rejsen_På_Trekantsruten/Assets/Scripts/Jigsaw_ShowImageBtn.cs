@@ -14,6 +14,7 @@ public class Jigsaw_ShowImageBtn : MonoBehaviour
         {
             //Debug.Log("Pointer down");
             mapImage.SetActive(true);
+            GameManager.usedMap++;
         }
         else
         {
