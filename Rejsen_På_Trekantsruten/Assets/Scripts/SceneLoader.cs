@@ -8,12 +8,12 @@ public class SceneLoader : MonoBehaviour
 {
     public int nextScene;
     public bool additive;
-    public Button btn;
+    Button btn;
 
     // Start is called before the first frame update
     private void Start()
     {
-        btn = btn.GetComponent<Button>();
+        btn = this.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
 
