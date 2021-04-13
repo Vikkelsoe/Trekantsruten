@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Labyrint_Player : MonoBehaviour
 {
-
+    public GameObject door;
+    public Text winText;
+    public GameObject winPanel;
     public float speed = 2f;
-
     Rigidbody2D rb;
 
 
@@ -16,31 +18,21 @@ public class Labyrint_Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Move(string button)
     {
         switch (button)
         {
             case "up":
                 rb.velocity = new Vector2(0, 1 * speed);
-                Debug.Log("up");
                 break;
             case "down":
                 rb.velocity = new Vector2(0, -1 * speed);
-                Debug.Log("down");
                 break;
             case "left":
                 rb.velocity = new Vector2(-1 * speed, 0);
-                Debug.Log("left");
                 break;
             case "right":
                 rb.velocity = new Vector2(1 * speed, 0);
-                Debug.Log("right");
                 break;
             case "stop":
                 rb.velocity = new Vector2(0, 0);
@@ -54,11 +46,20 @@ public class Labyrint_Player : MonoBehaviour
         if(collision.gameObject.tag == "Key")
         {
             Destroy(collision.gameObject);
+            Destroy(door);
         }
 
         if (collision.gameObject.tag == "Enemies")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (collision.gameObject.tag == "Goal")
+        {
+            Destroy(collision.gameObject);
+            winText.text = "Flot klaret!";
+            winPanel.SetActive(true);
+            Debug.Log("DU HAR VUNDET!");
         }
     }
 }
