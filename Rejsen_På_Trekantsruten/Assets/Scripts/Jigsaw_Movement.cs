@@ -19,10 +19,6 @@ public class Jigsaw_Movement : MonoBehaviour
             // Sets the position of this object to that of objPosition
             transform.position = objPosition;
         }
-        if (pieceStatus == "idle")
-        {
-            //checkPlacement = true;
-        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -33,7 +29,11 @@ public class Jigsaw_Movement : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             transform.position = other.gameObject.transform.position;
             pieceStatus = "locked";
+        }
+        if (pieceStatus == "locked" && checkPlacement == true)
+        {
             checkPlacement = false;
+            GameManager.lockedPieces++;
         }
     }
 
