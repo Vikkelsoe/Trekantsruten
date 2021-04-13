@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     // Jigsaw Variables
     public bool isJigsaw = false;
     public static int lockedPieces = 0;
-    public GameObject cam;
+    public static int usedMap = 0;
+    public GameObject winScreen;
+    public GameObject mapCounterText;
 
 
     // Start is called before the first frame update
@@ -22,7 +25,8 @@ public class GameManager : MonoBehaviour
         //Debug.Log(lockedPieces);
         if (lockedPieces == 36)
         {
-            cam.SetActive(false);
+            winScreen.SetActive(true);
+            mapCounterText.GetComponent<Text>().text = "Du har brugt \"Vis Kort\" " + usedMap + " gange.";
         }
     }
 }
