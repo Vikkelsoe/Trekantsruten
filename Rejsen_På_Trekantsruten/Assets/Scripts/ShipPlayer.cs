@@ -24,7 +24,27 @@ public class ShipPlayer : MonoBehaviour
         //offset = obj.transform.position;
         GetComponent<Rigidbody>().velocity = new Vector3(0,0, 2);
     }
+    public void Left()
+    {
+        if ((baneSkift == "n") && (transform.position.x > -.9))
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3(-1, 0, 2);
+            baneSkift = "y";
+            StartCoroutine(stopLaneCh());
 
+        }
+    }
+
+    public void Right()
+    {
+        if ((baneSkift == "n") && (transform.position.x < .9))
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3(1, 0, 2);
+            baneSkift = "y";
+            StartCoroutine(stopLaneCh());
+
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,20 +53,14 @@ public class ShipPlayer : MonoBehaviour
         //transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time, length)+height, transform.position.z);
         transform.position = new Vector3(transform.position.x, height, transform.position.z);
 
-        if ((Input.GetKey("a"))&&(baneSkift=="n")&&(transform.position.x>-.9))
+        /*if ((Input.GetKey("a"))&&(baneSkift=="n")&&(transform.position.x>-.9))
         {
             GetComponent<Rigidbody>().velocity = new Vector3(-1, 0, 2);
             baneSkift = "y";
             StartCoroutine(stopLaneCh());
 
-        }
-        if ((Input.GetKey("d"))&&(baneSkift=="n") && (transform.position.x < .9))
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(1, 0, 2);
-            baneSkift = "y";
-            StartCoroutine(stopLaneCh());
-
-        }
+        }*/
+        
 
     }
     IEnumerator stopLaneCh()
@@ -64,7 +78,9 @@ public class ShipPlayer : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             Debug.Log("ouch!");
+            FindObjectOfType<GameManagerShip>().EndGame();
 
+            
         }
     }
 
