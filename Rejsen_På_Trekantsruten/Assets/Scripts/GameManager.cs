@@ -11,11 +11,22 @@ public class GameManager : MonoBehaviour
     public bool isJigsaw = false;
     public static int lockedPieces = 0;
     public static int usedMap = 0;
-    public GameObject winScreen;
-    public GameObject winText;
-    public GameObject timeHighscore;
+    GameObject winScreen;
+    GameObject winText;
+    GameObject highscore;
 
     float timer = 0;
+
+    void Start()
+    {
+        if (isJigsaw == true)
+        {
+            winScreen = GameObject.Find("Win_Screen");
+            winText = GameObject.Find("Time_Taken");
+            highscore = GameObject.Find("Highscore 1");
+            winScreen.SetActive(false);
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -35,7 +46,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Highscore_MapUse", usedMap);
             }
 
-            timeHighscore.GetComponent<Text>().text = PlayerPrefs.GetFloat("Highscore_Time") + " sekunder, " + PlayerPrefs.GetInt("Highscore_MapUse") + " Vis Kort ";
+            highscore.GetComponent<Text>().text = PlayerPrefs.GetFloat("Highscore_Time") + " sekunder, " + PlayerPrefs.GetInt("Highscore_MapUse") + " Vis Kort ";
             PlayerPrefs.Save();
         }
         if (lockedPieces < 36)
