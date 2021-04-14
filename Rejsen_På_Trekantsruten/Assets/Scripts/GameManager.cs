@@ -12,29 +12,10 @@ public class GameManager : MonoBehaviour
     public static int lockedPieces = 0;
     public static int usedMap = 0;
     public GameObject winScreen;
-    public GameObject mapCounterText;
-    public GameObject timeText;
+    public GameObject winText;
     public GameObject timeHighscore;
-    public GameObject mapHighscore;
 
     float timer = 0;
-
-    
-
-    /*public static async Task ExampleAsync()
-    {
-        string[] jigsawHigh =
-        {
-            "1", "2", "3"
-        };
-        File.AppendAllLines("Jigsaw_Highscores.txt", jigsawHigh);
-    }*/
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -43,8 +24,7 @@ public class GameManager : MonoBehaviour
         if (lockedPieces == 36)
         {
             winScreen.SetActive(true);
-            mapCounterText.GetComponent<Text>().text = "Du har brugt \"Vis Kort\" " + usedMap + " gange.";
-            timeText.GetComponent<Text>().text = "Du har brugt " + timer + " sekunder.";
+            winText.GetComponent<Text>().text = "Du har brugt " + timer + " sek. & \"Vis kort\" " + usedMap + " gange.";
 
             if (timer < PlayerPrefs.GetFloat("Highscore_Time") || PlayerPrefs.GetFloat("Highscore_Time") < 0)
             {
@@ -55,8 +35,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Highscore_MapUse", usedMap);
             }
 
-            timeHighscore.GetComponent<Text>().text = "Highscore \"Tid\" : " + PlayerPrefs.GetFloat("Highscore_Time");
-            mapHighscore.GetComponent<Text>().text = "Highscore \"Kort Brugt\" : " + PlayerPrefs.GetInt("Highscore_MapUse");
+            timeHighscore.GetComponent<Text>().text = PlayerPrefs.GetFloat("Highscore_Time") + " sekunder, " + PlayerPrefs.GetInt("Highscore_MapUse") + " Vis Kort ";
             PlayerPrefs.Save();
         }
         if (lockedPieces < 36)
