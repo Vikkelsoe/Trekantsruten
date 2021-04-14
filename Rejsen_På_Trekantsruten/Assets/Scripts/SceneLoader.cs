@@ -28,7 +28,7 @@ public class SceneLoader : MonoBehaviour
         else
         {
             // Loader kun en enkel scene
-            SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+            SceneManager.LoadScene(nextScene);
         }
     }
 }

@@ -46,22 +46,34 @@ public class GameManager : MonoBehaviour
             mapCounterText.GetComponent<Text>().text = "Du har brugt \"Vis Kort\" " + usedMap + " gange.";
             timeText.GetComponent<Text>().text = "Du har brugt " + timer + " sekunder.";
 
-            if (timer < PlayerPrefs.GetFloat("Highscore_Time") || PlayerPrefs.GetFloat("Highscore_Time") <= 0)
+            if (timer < PlayerPrefs.GetFloat("Highscore_Time") || PlayerPrefs.GetFloat("Highscore_Time") < 0)
             {
                 PlayerPrefs.SetFloat("Highscore_Time", timer);
             }
-            if (usedMap < PlayerPrefs.GetInt("Highscore_MapUse") || PlayerPrefs.GetFloat("Highscore_MapUse") <= 0)
+            if (usedMap < PlayerPrefs.GetInt("Highscore_MapUse") || PlayerPrefs.GetInt("Highscore_MapUse") < 0)
             {
                 PlayerPrefs.SetInt("Highscore_MapUse", usedMap);
             }
 
             timeHighscore.GetComponent<Text>().text = "Highscore \"Tid\" : " + PlayerPrefs.GetFloat("Highscore_Time");
-            mapHighscore.GetComponent<Text>().text = "Highscore \"Kort Brugt\" : " + PlayerPrefs.GetFloat("Highscore_MapUse");
+            mapHighscore.GetComponent<Text>().text = "Highscore \"Kort Brugt\" : " + PlayerPrefs.GetInt("Highscore_MapUse");
             PlayerPrefs.Save();
         }
-        if (lockedPieces != 36)
+        if (lockedPieces < 36)
         {
             timer += Time.deltaTime;
         }
+        Debug.Log(PlayerPrefs.GetFloat("Highscore_MapUse"));
+    }
+    public void DebugWin()
+    {
+        lockedPieces = 36;
+    }
+
+    public void ResetHighscore()
+    {
+        lockedPieces++;
+        PlayerPrefs.SetFloat("Highscore_Time", -1);
+        PlayerPrefs.SetInt("Highscore_MapUse", -1);
     }
 }
