@@ -4,7 +4,7 @@ public class AnimationLibrary : MonoBehaviour
 {
 
     [Header("Boyancy Control Variable")]
-    public GameObject floatingObj;
+    //public GameObject floatingObj;
     public float amount;
     public float time;
 
@@ -18,15 +18,15 @@ public class AnimationLibrary : MonoBehaviour
     public void BoyancyControl()
     {
         float delayValue = Random.Range(delayValueMin, delayValueMax);
-        float startPosY = this.transform.position.y;
-        LeanTween.move(this.gameObject, new Vector2(0, startPosY + amount), time).setEaseInOutQuad().setLoopPingPong().setDelay(delayValue);
+        Vector2 startPos = this.transform.position;
+        LeanTween.move(this.gameObject, new Vector2(startPos.x, startPos.y + amount), time).setEaseInOutQuad().setLoopPingPong().setDelay(delayValue);
         LeanTween.rotate(this.gameObject, rotationVector, rotationTime).setFrom(startRotation).setEaseInOutQuad().setLoopPingPong();
     }
 
     private void Start()
     {
 
-        //BoyancyControl();
+        BoyancyControl();
 
         float xPos = Mathf.Sin(Time.time);
     }
