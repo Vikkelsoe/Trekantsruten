@@ -43,6 +43,7 @@ public class Jigsaw_Movement : MonoBehaviour
             checkPlacement = false;
             GameManager.lockedPieces++;
             audioPlaced.Play();
+            this.transform.position += new Vector3(0, 0, 0.01f);
         }
     }
 
