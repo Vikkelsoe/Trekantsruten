@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject winScreen;
     public GameObject mapCounterText;
     public GameObject timeText;
+    public GameObject timeHighscore;
+    public GameObject mapHighscore;
 
     float timer = 0;
 
@@ -42,10 +44,20 @@ public class GameManager : MonoBehaviour
         {
             winScreen.SetActive(true);
             mapCounterText.GetComponent<Text>().text = "Du har brugt \"Vis Kort\" " + usedMap + " gange.";
-            float time = 0;
-            time = timer;
-            mapCounterText.GetComponent<Text>().text = "Du har brugt " + time + " sekunder.";
-            Jigsaw_Highscore.time = timer;
+            timeText.GetComponent<Text>().text = "Du har brugt " + timer + " sekunder.";
+
+            if (timer < PlayerPrefs.GetFloat("Highscore_Time") || PlayerPrefs.GetFloat("Highscore_Time") <= 0)
+            {
+                PlayerPrefs.SetFloat("Highscore_Time", timer);
+            }
+            if (usedMap < PlayerPrefs.GetInt("Highscore_MapUse") || PlayerPrefs.GetFloat("Highscore_MapUse") <= 0)
+            {
+                PlayerPrefs.SetInt("Highscore_MapUse", usedMap);
+            }
+
+            timeHighscore.GetComponent<Text>().text = "Highscore \"Tid\" : " + PlayerPrefs.GetFloat("Highscore_Time");
+            mapHighscore.GetComponent<Text>().text = "Highscore \"Kort Brugt\" : " + PlayerPrefs.GetFloat("Highscore_MapUse");
+            PlayerPrefs.Save();
         }
         if (lockedPieces != 36)
         {
