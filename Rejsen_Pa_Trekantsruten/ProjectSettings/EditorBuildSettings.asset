@@ -35,4 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Scenes/Vejledning.unity
     guid: f896202d0870a8c41855a000cdea5f2f
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/HistorieP5.unity
+    guid: 77d3431227f6fc04a814d6d4b115a5bd
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/HistorieP6.unity
+    guid: 40ab62c8c3fab6e4b88cc8b74f488676
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/HistorieP7.unity
+    guid: bd9e7ec87a688d04d9bd45ba996d9e78
   m_configObjects: {}

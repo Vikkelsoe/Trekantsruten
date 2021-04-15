@@ -54,6 +54,10 @@ public class SceneLoader : MonoBehaviour
         }
         else if (sceneName == "HistorieP6")
         {
+            SceneManager.LoadScene("LabyrintSpil");
+        }
+        else if (sceneName == "LabyrintSpil")
+        {
             SceneManager.LoadScene("HistorieP7");
         }
     }
