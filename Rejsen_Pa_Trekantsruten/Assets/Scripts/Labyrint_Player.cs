@@ -8,6 +8,7 @@ public class Labyrint_Player : MonoBehaviour
 {
     public GameObject door;
     public GameObject winPanel;
+    public GameObject arrows;
     public float speed = 2f;
     Rigidbody2D rb;
 
@@ -42,7 +43,7 @@ public class Labyrint_Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Key")
+        if (collision.gameObject.tag == "Key")
         {
             Destroy(collision.gameObject);
             Destroy(door);
@@ -57,6 +58,7 @@ public class Labyrint_Player : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             winPanel.SetActive(true);
+            arrows.SetActive(false);
         }
     }
 }
