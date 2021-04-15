@@ -60,11 +60,7 @@ public class Labyrint_Player : MonoBehaviour
             Destroy(collision.gameObject);
             winText.text = "Flot klaret!";
             winPanel.SetActive(true);
-<<<<<<< HEAD
-            Debug.Log("DU HAR VUNDET!");
-=======
             arrows.SetActive(false);
->>>>>>> pr/12
         }
     }
 }
