@@ -18,7 +18,7 @@ public class GameManagerShip : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            Debug.Log("Game Over");
+            //Debug.Log("Game Over");
             gameOverUI.SetActive(true);
 
 
@@ -31,7 +31,7 @@ public class GameManagerShip : MonoBehaviour
     }
     public void CompleteLevel()
     {
-        Debug.Log("level won");
+        //Debug.Log("level won");
         wonUI.SetActive(true);
 
     }

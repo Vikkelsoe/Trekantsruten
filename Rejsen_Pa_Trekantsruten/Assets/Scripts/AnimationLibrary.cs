@@ -20,7 +20,7 @@ public class AnimationLibrary : MonoBehaviour
         float delayValue = Random.Range(delayValueMin, delayValueMax);
         Vector2 startPos = this.transform.position;
         LeanTween.move(this.gameObject, new Vector2(startPos.x, startPos.y + amount), time).setEaseInOutQuad().setLoopPingPong().setDelay(delayValue);
-        LeanTween.rotate(this.gameObject, rotationVector, rotationTime).setFrom(startRotation).setEaseInOutQuad().setLoopPingPong();
+        //LeanTween.rotate(this.gameObject, rotationVector, rotationTime).setFrom(startRotation).setEaseInOutQuad().setLoopPingPong();
     }
 
     private void Start()
