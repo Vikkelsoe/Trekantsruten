@@ -77,7 +77,7 @@ public class ShipPlayer : MonoBehaviour
     {
         if (other.tag == "Obstacle")
         {
-            Debug.Log("ouch!");
+            //Debug.Log("ouch!");
             FindObjectOfType<GameManagerShip>().EndGame();
 
             
