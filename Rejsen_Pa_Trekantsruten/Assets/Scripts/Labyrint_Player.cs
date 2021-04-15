@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Labyrint_Player : MonoBehaviour
 {
     public GameObject door;
-    public Text winText;
     public GameObject winPanel;
     public GameObject arrows;
     public float speed = 2f;
@@ -57,8 +56,7 @@ public class Labyrint_Player : MonoBehaviour
 
         if (collision.gameObject.tag == "Goal")
         {
-            Destroy(collision.gameObject);
-            winText.text = "Flot klaret!";
+            this.gameObject.SetActive(false);
             winPanel.SetActive(true);
             arrows.SetActive(false);
         }
