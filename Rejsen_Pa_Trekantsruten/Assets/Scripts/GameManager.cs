@@ -11,21 +11,27 @@ public class GameManager : MonoBehaviour
     public bool isJigsaw = false;
     public static int lockedPieces = 0;
     public static int usedMap = 0;
-    GameObject winScreen;
-    GameObject winText;
-    GameObject highscore;
+    public GameObject winScreen;
+    public GameObject mapCounterText;
+    public GameObject timeText;
 
     float timer = 0;
 
+    
+
+    /*public static async Task ExampleAsync()
+    {
+        string[] jigsawHigh =
+        {
+            "1", "2", "3"
+        };
+        File.AppendAllLines("Jigsaw_Highscores.txt", jigsawHigh);
+    }*/
+
+    // Start is called before the first frame update
     void Start()
     {
-        if (isJigsaw == true)
-        {
-            winScreen = GameObject.Find("Win_Screen");
-            winText = GameObject.Find("Time_Taken");
-            highscore = GameObject.Find("Highscore 1");
-            winScreen.SetActive(false);
-        }
+
     }
 
     // Update is called once per frame
@@ -35,35 +41,15 @@ public class GameManager : MonoBehaviour
         if (lockedPieces == 36)
         {
             winScreen.SetActive(true);
-            winText.GetComponent<Text>().text = "Du har brugt " + timer + " sek. & \"Vis kort\" " + usedMap + " gange.";
-
-            if (timer < PlayerPrefs.GetFloat("Highscore_Time") || PlayerPrefs.GetFloat("Highscore_Time") < 0)
-            {
-                PlayerPrefs.SetFloat("Highscore_Time", timer);
-            }
-            if (usedMap < PlayerPrefs.GetInt("Highscore_MapUse") || PlayerPrefs.GetInt("Highscore_MapUse") < 0)
-            {
-                PlayerPrefs.SetInt("Highscore_MapUse", usedMap);
-            }
-
-            highscore.GetComponent<Text>().text = PlayerPrefs.GetFloat("Highscore_Time") + " sekunder, " + PlayerPrefs.GetInt("Highscore_MapUse") + " Vis Kort ";
-            PlayerPrefs.Save();
+            mapCounterText.GetComponent<Text>().text = "Du har brugt \"Vis Kort\" " + usedMap + " gange.";
+            float time = 0;
+            time = timer;
+            mapCounterText.GetComponent<Text>().text = "Du har brugt " + time + " sekunder.";
+            Jigsaw_Highscore.time = timer;
         }
-        if (lockedPieces < 36)
+        if (lockedPieces != 36)
         {
             timer += Time.deltaTime;
         }
-        Debug.Log(PlayerPrefs.GetFloat("Highscore_MapUse"));
-    }
-    public void DebugWin()
-    {
-        lockedPieces = 36;
-    }
-
-    public void ResetHighscore()
-    {
-        lockedPieces++;
-        PlayerPrefs.SetFloat("Highscore_Time", -1);
-        PlayerPrefs.SetInt("Highscore_MapUse", -1);
     }
 }

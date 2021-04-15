@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    public int nextScene;
-    public bool additive;
+    string sceneName;
     Button btn;
 
     // Start is called before the first frame update
@@ -15,20 +14,47 @@ public class SceneLoader : MonoBehaviour
     {
         btn = this.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        sceneName = SceneManager.GetActiveScene().name;
     }
 
     // TaskOnClick is called When the Button is clicked
     void TaskOnClick()
     {
-        if (additive)
+        if (sceneName == "Vejledning")
         {
-            // Loader en scene oven i den eksisterende
-            SceneManager.LoadScene(nextScene, LoadSceneMode.Additive);
+            SceneManager.LoadScene("HistorieP1.1");
         }
-        else
+        else if (sceneName == "HistorieP1.1")
         {
-            // Loader kun en enkel scene
-            SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene("HistorieP1.2");
+        }
+        else if (sceneName == "HistorieP1.2")
+        {
+            SceneManager.LoadScene("HistorieP2");
+        }
+        else if (sceneName == "HistorieP2")
+        {
+            SceneManager.LoadScene("HistorieP3");
+        }
+        else if (sceneName == "HistorieP3")
+        {
+            SceneManager.LoadScene("HistorieP4.1");
+        }
+        else if (sceneName == "HistorieP4.1")
+        {
+            SceneManager.LoadScene("HistorieP4.2");
+        }
+        else if (sceneName == "HistorieP4.2")
+        {
+            SceneManager.LoadScene("HistorieP5");
+        }
+        else if (sceneName == "HistorieP5")
+        {
+            SceneManager.LoadScene("HistorieP6");
+        }
+        else if (sceneName == "HistorieP6")
+        {
+            SceneManager.LoadScene("HistorieP7");
         }
     }
 }
