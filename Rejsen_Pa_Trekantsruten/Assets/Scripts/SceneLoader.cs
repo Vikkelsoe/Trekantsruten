@@ -27,39 +27,8 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("HistorieP1.2");
-        }
-        else if (sceneName == "HistorieP1.2")
-        {
-            SceneManager.LoadScene("HistorieP2");
-        }
-        else if (sceneName == "HistorieP2")
-        {
-            SceneManager.LoadScene("HistorieP3");
-        }
-        else if (sceneName == "HistorieP3")
-        {
-            SceneManager.LoadScene("HistorieP4.1");
-        }
-        else if (sceneName == "HistorieP4.1")
-        {
-            SceneManager.LoadScene("HistorieP4.2");
-        }
-        else if (sceneName == "HistorieP4.2")
-        {
-            SceneManager.LoadScene("HistorieP5");
-        }
-        else if (sceneName == "HistorieP5")
-        {
-            SceneManager.LoadScene("HistorieP6");
-        }
-        else if (sceneName == "HistorieP6")
-        {
-            SceneManager.LoadScene("LabyrintSpil");
-        }
-        else if (sceneName == "LabyrintSpil")
-        {
-            SceneManager.LoadScene("HistorieP7");
+            // Loader kun en enkel scene
+            SceneManager.LoadScene(nextScene);
         }
     }
 }
