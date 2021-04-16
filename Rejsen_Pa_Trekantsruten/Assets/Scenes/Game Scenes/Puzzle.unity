@@ -4724,9 +4724,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isJigsaw: 1
-  winScreen: {fileID: 305342168}
-  mapCounterText: {fileID: 63616021}
-  timeText: {fileID: 252796611}
 --- !u!4 &660805960
 Transform:
   m_ObjectHideFlags: 0
