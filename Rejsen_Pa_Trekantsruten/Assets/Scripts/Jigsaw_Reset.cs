@@ -11,7 +11,7 @@ public class Jigsaw_Reset : MonoBehaviour
     void Start()
     {
         btn = this.GetComponent<Button>();
-        btn.onClick.AddListener(ResetHighscore);
+        //btn.onClick.AddListener(ResetHighscore);
     }
 
     void ResetHighscore()

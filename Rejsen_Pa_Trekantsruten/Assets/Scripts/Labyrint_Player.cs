@@ -10,7 +10,7 @@ public class Labyrint_Player : MonoBehaviour
     public GameObject winPanel;
     public GameObject gameOverPanel;
     public GameObject arrows;
-    public Button btn;
+    public UnityEngine.UI.Button btn;
     
     public float speed = 2f;
     Rigidbody2D rb;
