@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theCode: 
-  inputField: {fileID: 1051217343}
+  inputField: {fileID: 2000410944}
   textDisplay: {fileID: 1051217343}
 --- !u!4 &747636896
 Transform:
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 1051217346}
   - component: {fileID: 1051217345}
   m_Layer: 5
-  m_Name: Text
+  m_Name: WRONG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -918,7 +918,7 @@ GameObject:
   - component: {fileID: 2000410947}
   - component: {fileID: 2000410946}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
