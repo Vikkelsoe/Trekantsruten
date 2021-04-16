@@ -7,22 +7,22 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     string sceneName;
-    Button btn;
+    UnityEngine.UI.Button btn;
 
     // Start is called before the first frame update
     private void Start()
     {
-        btn = this.GetComponent<Button>();
-        //btn.onClick.AddListener(TaskOnClick);
+        btn = this.GetComponent<UnityEngine.UI.Button>();
+        btn.onClick.AddListener(TaskOnClick);
         sceneName = SceneManager.GetActiveScene().name;
     }
 
     // TaskOnClick is called When the Button is clicked
-    void TaskOnClick()
+    public void TaskOnClick()
     {
         if (sceneName == "Vejledning")
         {
-            SceneManager.LoadScene("HistorieP1.1");
+            SceneManager.LoadScene("Post1");
         }
         else if (sceneName == "HistorieP1.1")
         {
@@ -30,15 +30,11 @@ public class SceneLoader : MonoBehaviour
         }
         else if (sceneName == "HistorieP1.2")
         {
-            SceneManager.LoadScene("HistorieP2");
+            SceneManager.LoadScene("Puzzle");
         }
-        else if (sceneName == "HistorieP2")
+        else if (sceneName == "Puzzle")
         {
-            SceneManager.LoadScene("HistorieP3");
-        }
-        else if (sceneName == "HistorieP3")
-        {
-            SceneManager.LoadScene("HistorieP4.1");
+            SceneManager.LoadScene("Post4");
         }
         else if (sceneName == "HistorieP4.1")
         {
@@ -46,11 +42,11 @@ public class SceneLoader : MonoBehaviour
         }
         else if (sceneName == "HistorieP4.2")
         {
-            SceneManager.LoadScene("HistorieP5");
+            SceneManager.LoadScene("Skib");
         }
-        else if (sceneName == "HistorieP5")
+        else if (sceneName == "Skib")
         {
-            SceneManager.LoadScene("HistorieP6");
+            SceneManager.LoadScene("Post6");
         }
         else if (sceneName == "HistorieP6")
         {

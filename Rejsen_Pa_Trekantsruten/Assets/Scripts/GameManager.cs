@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static int usedMap = 0;
     GameObject winScreen;
     GameObject winText;
-    GameObject highscore;
+    //GameObject highscore;
 
     float timer = 0;
 
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         {
             winScreen = GameObject.Find("Win_Screen");
             winText = GameObject.Find("Time_Taken");
-            highscore = GameObject.Find("Highscore 1");
+            //highscore = GameObject.Find("Highscore 1");
             winScreen.SetActive(false);
         }
     }
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Highscore_MapUse", usedMap);
             }
 
-            highscore.GetComponent<Text>().text = PlayerPrefs.GetFloat("Highscore_Time") + " sekunder, " + PlayerPrefs.GetInt("Highscore_MapUse") + " Vis Kort ";
+            //highscore.GetComponent<Text>().text = PlayerPrefs.GetFloat("Highscore_Time") + " sekunder, " + PlayerPrefs.GetInt("Highscore_MapUse") + " Vis Kort ";
             PlayerPrefs.Save();
         }
         if (lockedPieces < 36)
