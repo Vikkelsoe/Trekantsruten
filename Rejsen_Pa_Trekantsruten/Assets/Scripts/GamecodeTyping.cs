@@ -16,24 +16,20 @@ public class GamecodeTyping : MonoBehaviour
     {
         theCode = inputField.GetComponent<Text>().text;
 
-
-
-
-        if (theCode == "PHP")
+        if (theCode.ToLower() == "kshb")
         {
-            SceneManager.LoadScene("Prove1");
+            SceneManager.LoadScene("HistorieP1.1");
         }
-        else if (theCode == "TTS")
+        else if (theCode.ToLower() == "idcy")
         {
-            SceneManager.LoadScene("Prove1");
+            SceneManager.LoadScene("HistorieP4.1");
         }
-        else if (theCode == "LOL")
+        else if (theCode.ToLower() == "pimc")
         {
-            SceneManager.LoadScene("Prove1");
+            SceneManager.LoadScene("HistorieP6");
         }
         else
         {
-
             textDisplay.GetComponent<Text>().text = "Forkert kode";
         }
 
