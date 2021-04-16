@@ -13,7 +13,7 @@ public class SceneLoader : MonoBehaviour
     private void Start()
     {
         btn = this.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        //btn.onClick.AddListener(TaskOnClick);
         sceneName = SceneManager.GetActiveScene().name;
     }
 
