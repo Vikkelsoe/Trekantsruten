@@ -8,7 +8,6 @@ TagManager:
   - Key
   - Enemies
   - Goal
-  - Obstacle
   layers:
   - Default
   - TransparentFX
