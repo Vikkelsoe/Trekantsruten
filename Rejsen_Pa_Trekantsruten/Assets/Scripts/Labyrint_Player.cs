@@ -8,13 +8,17 @@ public class Labyrint_Player : MonoBehaviour
 {
     public GameObject door;
     public GameObject winPanel;
+    public GameObject gameOverPanel;
     public GameObject arrows;
+    public Button btn;
+    
     public float speed = 2f;
     Rigidbody2D rb;
 
 
     private void Start()
     {
+        btn.onClick.AddListener(TaskOnClick);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -51,7 +55,7 @@ public class Labyrint_Player : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemies")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            gameOverPanel.SetActive(true);
         }
 
         if (collision.gameObject.tag == "Goal")
@@ -60,5 +64,10 @@ public class Labyrint_Player : MonoBehaviour
             winPanel.SetActive(true);
             arrows.SetActive(false);
         }
+    }
+
+    public void TaskOnClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
