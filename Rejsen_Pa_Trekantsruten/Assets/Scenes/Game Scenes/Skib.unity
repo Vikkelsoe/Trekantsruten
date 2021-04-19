@@ -287,7 +287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 15333365}
-  length: 1
   height: 0.3
 --- !u!54 &38746122
 Rigidbody:
@@ -818,6 +817,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
       propertyPath: m_Name
       value: Barrel_BG_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
       propertyPath: m_TagString
@@ -3628,6 +3631,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1db0a7e1cecd10640a3f60ccea366c20, type: 3}
       propertyPath: m_Name
       value: ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1db0a7e1cecd10640a3f60ccea366c20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2287902867055187991, guid: 1db0a7e1cecd10640a3f60ccea366c20, type: 3}
       propertyPath: m_LocalScale.x

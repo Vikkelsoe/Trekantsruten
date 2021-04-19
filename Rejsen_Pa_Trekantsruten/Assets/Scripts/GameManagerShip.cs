@@ -10,30 +10,20 @@ public class GameManagerShip : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject wonUI;
 
-
-  
-
     public void EndGame() 
     {
+        // Hvis spillet ikke allerede er stoppet, fordi man er død stoppes spillet og gameover skærmbilledet kommer frem  
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            //Debug.Log("Game Over");
             gameOverUI.SetActive(true);
-
-
-          //Invoke("Restart", 2f);
-          
-
         }
-        
-
     }
+    // Hvis spillet er vundet kommer skærmbilledet op hvor man kan komme videre i spillet 
+    
     public void CompleteLevel()
     {
-        //Debug.Log("level won");
         wonUI.SetActive(true);
-
     }
 
 
