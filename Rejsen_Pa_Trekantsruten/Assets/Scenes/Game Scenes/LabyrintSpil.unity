@@ -6724,7 +6724,7 @@ GameObject:
   - component: {fileID: 964926570}
   - component: {fileID: 964926569}
   m_Layer: 0
-  m_Name: red_arrow_PNG1
+  m_Name: GoalArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
