@@ -4510,6 +4510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isJigsaw: 1
+  mapImage: {fileID: 0}
 --- !u!4 &660805960
 Transform:
   m_ObjectHideFlags: 0
@@ -8150,8 +8151,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1477538163}
-          m_TargetAssemblyTypeName: Jigsaw_ShowImageBtn, Assembly-CSharp
+        - m_Target: {fileID: 660805959}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: ShowMap
           m_Mode: 6
           m_Arguments:
@@ -8166,8 +8167,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1477538163}
-          m_TargetAssemblyTypeName: Jigsaw_ShowImageBtn, Assembly-CSharp
+        - m_Target: {fileID: 660805959}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: ShowMap
           m_Mode: 6
           m_Arguments:
