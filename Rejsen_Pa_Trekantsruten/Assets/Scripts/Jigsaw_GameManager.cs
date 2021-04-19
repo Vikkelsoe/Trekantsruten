@@ -3,65 +3,96 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class Jigsaw_GameManager : MonoBehaviour
 {
-    // Jigsaw Variables
+    // Puslespilsvarialber
     public bool isJigsaw = false;
     public static int lockedPieces = 0;
     public static int usedMap = 0;
     GameObject winScreen;
     GameObject winText;
-    //GameObject highscore;
 
+    // Finder spilobjektet med kortet, og definere det som "mapImage"
+    public GameObject mapImage;
+
+    // Spiltimeren
     float timer = 0;
 
+    // Start bliver kaldt før første frame
     void Start()
     {
+        // Tjekker om det er puslespillet der bliver spillet
         if (isJigsaw == true)
         {
+            // Finder de spilobjekter der skal bruges i scenen
             winScreen = GameObject.Find("Win_Screen");
             winText = GameObject.Find("Time_Taken");
-            //highscore = GameObject.Find("Highscore 1");
+
+            // Deaktiverer vindeskærmen
             winScreen.SetActive(false);
         }
     }
 
-    // Update is called once per frame
+    // Update bliver kaldt én gang per frame
     void Update()
     {
-        //Debug.Log(lockedPieces);
+        // Tjekker om alle puslespilsbrikkerne er blevet lagt
         if (lockedPieces == 36)
         {
+            // Aktiverer vindeskærmen
             winScreen.SetActive(true);
+            // Opdatere texten på vindeskærmen med hvor lang tid der blev brugt, og hvor mange gange kortet blev brugt.
             winText.GetComponent<Text>().text = "Du har brugt " + timer + " sek. & \"Vis kort\" " + usedMap + " gange.";
 
+            // Opdatere tidens highscore, hvis den blev slået
             if (timer < PlayerPrefs.GetFloat("Highscore_Time") || PlayerPrefs.GetFloat("Highscore_Time") < 0)
             {
                 PlayerPrefs.SetFloat("Highscore_Time", timer);
             }
+            // Opdatere kortets highscore, hvis den blev slået
             if (usedMap < PlayerPrefs.GetInt("Highscore_MapUse") || PlayerPrefs.GetInt("Highscore_MapUse") < 0)
             {
                 PlayerPrefs.SetInt("Highscore_MapUse", usedMap);
             }
 
-            //highscore.GetComponent<Text>().text = PlayerPrefs.GetFloat("Highscore_Time") + " sekunder, " + PlayerPrefs.GetInt("Highscore_MapUse") + " Vis Kort ";
+            // Gemmer highscoren
             PlayerPrefs.Save();
         }
+        // Opdaterer tiden der er blevet brugt, hvis spillet ikke er slut
         if (lockedPieces < 36)
         {
             timer += Time.deltaTime;
         }
-        Debug.Log(PlayerPrefs.GetFloat("Highscore_MapUse"));
     }
+
+    // DebugWin er brugt til at springe puslespillet over
     public void DebugWin()
     {
         lockedPieces = 36;
     }
 
+    // ResetHighscore er brugt til at nulstile highscoren
     public void ResetHighscore()
     {
         lockedPieces++;
         PlayerPrefs.SetFloat("Highscore_Time", -1);
         PlayerPrefs.SetInt("Highscore_MapUse", -1);
+    }
+
+    // ShowMap bliver kaldt når knappen "Vis kort" bliver trykket
+    public void ShowMap(bool display)
+    {
+        // Tjekker om kortet skal vises eller ej
+        if (display == true)
+        {
+            // Aktivere kortet og lægger én til "usedMap"
+            mapImage.SetActive(true);
+            usedMap++;
+        }
+        else
+        {
+            // Deaktivere kortet
+            mapImage.SetActive(false);
+        }
     }
 }
