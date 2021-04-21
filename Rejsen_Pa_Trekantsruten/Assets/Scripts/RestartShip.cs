@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class RestartShip : MonoBehaviour
 {
+    // Starter spillet forfra 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
     }
 
     
