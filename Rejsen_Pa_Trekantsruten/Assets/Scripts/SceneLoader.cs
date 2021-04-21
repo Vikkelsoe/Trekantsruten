@@ -11,14 +11,55 @@ public class SceneLoader : MonoBehaviour
 
     private void Start()
     {
+        sceneName = SceneManager.GetActiveScene().name; //den aktive scenes navn lagres i en variabel
         btn = this.GetComponent<UnityEngine.UI.Button>(); //knappen, som scriptet sidder på, lagres i en variabel
         btn.onClick.AddListener(ChangeScene); //når knappen trykkes, kaldes ChangeScene()-funktionen
-        sceneName = SceneManager.GetActiveScene().name; //den aktive scenes navn lagres i en variabel
     }
 
     public void ChangeScene()
     {
-        //det undersøges med if-sætninger, hvad det aktive scenenavn er, og hvilken scene, der så skal loades
+        //det undersøges med et switch-case statement, hvad det aktive scenenavn er, og hvilken scene, der så skal loades
+        switch (sceneName)
+        {
+            case "Vejledning":
+                SceneManager.LoadScene("Post1");
+                break;
+            case "HistorieP1.1":
+                SceneManager.LoadScene("HistorieP1.2");
+                break;
+            case "HistorieP1.2":
+                SceneManager.LoadScene("Vejledning_Puzzle");
+                break;
+            case "Vejledning_Puzzle":
+                SceneManager.LoadScene("Puzzle");
+                break;
+            case "Puzzle":
+                SceneManager.LoadScene("Post4");
+                break;
+            case "HistorieP4.1":
+                SceneManager.LoadScene("HistorieP4.2");
+                break;
+            case "HistorieP4.2":
+                SceneManager.LoadScene("Vejledning_Skib");
+                break;
+            case "Vejledning_Skib":
+                SceneManager.LoadScene("Skib");
+                break;
+            case "Skib":
+                SceneManager.LoadScene("Post6");
+                break;
+            case "HistorieP6":
+                SceneManager.LoadScene("Vejledning_Labyrint");
+                break;
+            case "Vejledning_Labyrint":
+                SceneManager.LoadScene("LabyrintSpil");
+                break;
+            case "LabyrintSpil":
+                SceneManager.LoadScene("HistorieP7");
+                break;
+        }
+        
+        /*
         if (sceneName == "Vejledning")
         {
             SceneManager.LoadScene("Post1");
@@ -55,5 +96,6 @@ public class SceneLoader : MonoBehaviour
         {
             SceneManager.LoadScene("HistorieP7");
         }
+        */
     }
 }
