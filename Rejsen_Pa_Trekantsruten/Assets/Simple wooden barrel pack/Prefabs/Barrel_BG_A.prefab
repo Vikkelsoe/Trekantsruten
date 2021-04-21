@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 6400000}
-  - component: {fileID: 6648755407599756936}
   m_Layer: 0
   m_Name: Barrel_BG_A
   m_TagString: Obstacle
@@ -97,22 +96,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: ef9cc9b6305c3d143a0d379da6d3631f, type: 3}
---- !u!114 &6648755407599756936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c91f1a1a3208e5478635758139a10d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 0.5
-  time: 3
-  startRotation: {x: 0, y: 0, z: 0}
-  rotationVector: {x: 0, y: 0, z: 0}
-  rotationTime: 0
-  delayValueMin: 0
-  delayValueMax: 0

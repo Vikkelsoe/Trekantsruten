@@ -552,7 +552,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3d389076f97724b4aac535de22a05f3e, type: 3}
 --- !u!4 &117002584 stripped
 Transform:
@@ -890,9 +891,7 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5400000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
-    - {fileID: 6648755407599756936, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
 --- !u!1001 &262019705
 PrefabInstance:
@@ -1603,7 +1602,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3d389076f97724b4aac535de22a05f3e, type: 3}
 --- !u!1001 &677548868
 PrefabInstance:
@@ -1680,7 +1680,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3d389076f97724b4aac535de22a05f3e, type: 3}
 --- !u!1 &683751581
 GameObject:
@@ -2738,7 +2739,7 @@ GameObject:
   - component: {fileID: 1126895766}
   - component: {fileID: 1126895765}
   m_Layer: 5
-  m_Name: Venstre
+  m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3741,7 +3742,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3d389076f97724b4aac535de22a05f3e, type: 3}
 --- !u!1001 &1372537754
 PrefabInstance:
@@ -4014,30 +4016,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
   m_PrefabInstance: {fileID: 644161577}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1552068689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
-  m_PrefabInstance: {fileID: 239752588}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1552068690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552068689}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c91f1a1a3208e5478635758139a10d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 0
-  time: 3
-  startRotation: {x: 0, y: 0, z: 0}
-  rotationVector: {x: 0, y: 0, z: 0}
-  rotationTime: 0
-  delayValueMin: 0
-  delayValueMax: 0
 --- !u!4 &1552068694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 07db7fae50dc3f046a2cf72b17b0a304, type: 3}
@@ -4123,7 +4101,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3d389076f97724b4aac535de22a05f3e, type: 3}
 --- !u!4 &1585622276 stripped
 Transform:
@@ -4143,7 +4122,7 @@ GameObject:
   - component: {fileID: 1599519154}
   - component: {fileID: 1599519153}
   m_Layer: 5
-  m_Name: Hojre
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5213,5 +5192,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3d389076f97724b4aac535de22a05f3e, type: 3}

@@ -9,17 +9,16 @@ public class SceneLoader : MonoBehaviour
     string sceneName;
     UnityEngine.UI.Button btn;
 
-    // Start is called before the first frame update
     private void Start()
     {
-        btn = this.GetComponent<UnityEngine.UI.Button>();
-        btn.onClick.AddListener(TaskOnClick);
-        sceneName = SceneManager.GetActiveScene().name;
+        btn = this.GetComponent<UnityEngine.UI.Button>(); //knappen, som scriptet sidder på, lagres i en variabel
+        btn.onClick.AddListener(ChangeScene); //når knappen trykkes, kaldes ChangeScene()-funktionen
+        sceneName = SceneManager.GetActiveScene().name; //den aktive scenes navn lagres i en variabel
     }
 
-    // TaskOnClick is called When the Button is clicked
-    public void TaskOnClick()
+    public void ChangeScene()
     {
+        //det undersøges med if-sætninger, hvad det aktive scenenavn er, og hvilken scene, der så skal loades
         if (sceneName == "Vejledning")
         {
             SceneManager.LoadScene("Post1");

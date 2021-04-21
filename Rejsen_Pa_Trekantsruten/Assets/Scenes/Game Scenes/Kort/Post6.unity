@@ -1042,7 +1042,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1578222569}
         m_TargetAssemblyTypeName: GamecodeTyping, Assembly-CSharp
-        m_MethodName: StoreName
+        m_MethodName: CodeToScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
