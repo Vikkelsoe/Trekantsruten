@@ -60,7 +60,7 @@ public class Jigsaw_Movement : MonoBehaviour
         }
     }
 
-    // OnMouseDown bliver kaldt når musseknappen trykkes ned
+    // OnMouseDown bliver kaldt når museknappen trykkes ned
     private void OnMouseDown()
     {
         // Opdatere brikkens status til "Samlet op" og slår placeringstjek fra
@@ -68,7 +68,7 @@ public class Jigsaw_Movement : MonoBehaviour
         checkPlacement = false;
     }
 
-    // OnMouseUp bliver kaldt når musseknappen løftes
+    // OnMouseUp bliver kaldt når museknappen løftes
     private void OnMouseUp()
     {
         // Opdatere brikkens status til "venter" og slår placeringstjek til
