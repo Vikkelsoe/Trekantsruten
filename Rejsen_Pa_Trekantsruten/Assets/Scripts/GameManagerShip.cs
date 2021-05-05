@@ -9,6 +9,7 @@ public class GameManagerShip : MonoBehaviour
     bool gameHasEnded = false;
     public GameObject gameOverUI;
     public GameObject wonUI;
+    int tries = 0;
 
     public void EndGame() 
     {
@@ -18,14 +19,25 @@ public class GameManagerShip : MonoBehaviour
             gameHasEnded = true;
             gameOverUI.SetActive(true);
         }
+
+        // Lægger 1 til antallet af forsøg brugt
+        tries++;
     }
-    // Hvis spillet er vundet kommer skærmbilledet op hvor man kan komme videre i spillet 
-    
+
+    // Hvis spillet er vundet kommer skærmbilledet op hvor man kan komme videre i spillet     
     public void CompleteLevel()
     {
         wonUI.SetActive(true);
     }
 
+    private void Update()
+    {
+        // Opdatere tidens highscore, hvis den blev slået
+        if (tries < PlayerPrefs.GetInt("Ship_Highscore") || PlayerPrefs.GetInt("Ship_Highscore") <= 0)
+        {
+            PlayerPrefs.SetInt("Ship_Highscore", tries);
+        }
 
+    }
 
 }
