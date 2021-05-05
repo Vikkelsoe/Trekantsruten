@@ -57,6 +57,9 @@ public class SceneLoader : MonoBehaviour
             case "LabyrintSpil":
                 SceneManager.LoadScene("HistorieP7");
                 break;
+            case "HistorieP7":
+                SceneManager.LoadScene("Highscore");
+                break;
         }
         
         /*
