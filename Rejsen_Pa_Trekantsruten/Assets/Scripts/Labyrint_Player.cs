@@ -92,4 +92,11 @@ public class Labyrint_Player : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    // En snydeknap, til hurtigt at komme igennem spillet.
+    public void Cheat()
+    {
+        this.transform.position = new Vector3(-0.5f, 4.25f, 0);
+        GameObject.Find("Snyd").SetActive(false);
+    }
 }
