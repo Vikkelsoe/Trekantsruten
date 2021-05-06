@@ -16,11 +16,28 @@ public class Labyrint_Player : MonoBehaviour
     public float speed = 2f; //styrer hastigheden på spilleren 
     Rigidbody2D rb;
 
+    float timer = 0; // Timer til highscoren
 
     private void Start()
     {
         btn.onClick.AddListener(Restart); //Restart()-funktionen kaldes, når "Genstart"-knappen tændes
         rb = GetComponent<Rigidbody2D>(); //rigidbody-komponenten hentes fra spiller-GameObjectet
+    }
+
+    private void Update()
+    {
+        if (winPanel.activeSelf == false)
+        {
+            timer += Time.deltaTime;
+        }
+        if (winPanel.activeSelf == true)
+        {
+            // Opdatere tidens highscore, hvis den blev slået
+            if (timer < PlayerPrefs.GetFloat("Lab_Highscore") || PlayerPrefs.GetFloat("Lab_Highscore") <= 0)
+            {
+                PlayerPrefs.SetFloat("Lab_Highscore", timer);
+            }
+        }
     }
 
     //Move() kaldes, når en af Event Trigger-komponenterne på de fire bevægelses-kanpper aktiveres. Event Trigger-komponenten sender en attribut
@@ -74,5 +91,12 @@ public class Labyrint_Player : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // En snydeknap, til hurtigt at komme igennem spillet.
+    public void Cheat()
+    {
+        this.transform.position = new Vector3(-0.5f, 4.25f, 0);
+        GameObject.Find("Snyd").SetActive(false);
     }
 }
