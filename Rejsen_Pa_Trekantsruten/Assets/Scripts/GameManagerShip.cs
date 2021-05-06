@@ -11,6 +11,11 @@ public class GameManagerShip : MonoBehaviour
     public GameObject wonUI;
     int tries = 0;
 
+    private void Start()
+    {
+        PlayerPrefs.GetInt("tries");
+    }
+
     public void EndGame() 
     {
         // Hvis spillet ikke allerede er stoppet, fordi man er død stoppes spillet og gameover skærmbilledet kommer frem  
@@ -28,16 +33,17 @@ public class GameManagerShip : MonoBehaviour
     public void CompleteLevel()
     {
         wonUI.SetActive(true);
-    }
 
-    private void Update()
-    {
+        tries++;
         // Opdatere tidens highscore, hvis den blev slået
         if (tries < PlayerPrefs.GetInt("Ship_Highscore") || PlayerPrefs.GetInt("Ship_Highscore") <= 0)
         {
             PlayerPrefs.SetInt("Ship_Highscore", tries);
+            Debug.Log(PlayerPrefs.GetInt("Ship_Highscore")+" Highscore");
         }
-
     }
-
+    private void Update()
+    {
+        Debug.Log(tries);
+    }
 }
