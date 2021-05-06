@@ -69,6 +69,7 @@ public class Jigsaw_GameManager : MonoBehaviour
     public void DebugWin()
     {
         lockedPieces = 36;
+        GameObject.Find("Snyd").SetActive(false);
     }
 
     // ResetHighscore er brugt til at nulstile highscoren
