@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 
 public class GameManagerShip : MonoBehaviour
@@ -10,10 +12,17 @@ public class GameManagerShip : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject wonUI;
     int tries = 0;
+    Image progressBar;
+    public float maxTime = 5f;
+    float timeLeft;
+    float timer = 0;
 
     private void Start()
     {
         PlayerPrefs.GetInt("tries");
+        progressBar = GetComponent<Image>();
+        timeLeft = maxTime;
+
     }
 
     public void EndGame() 
@@ -41,10 +50,18 @@ public class GameManagerShip : MonoBehaviour
             PlayerPrefs.SetInt("Ship_Highscore", tries);
             Debug.Log(PlayerPrefs.GetInt("Ship_Highscore")+" Highscore");
         }
+        Debug.Log(timer);
     }
     private void Update()
     {
+        if (timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            progressBar.fillAmount = timeLeft / maxTime;
+        }
         Debug.Log(tries);
+
+        timer += Time.deltaTime;
     }
 
     public void Cheat()
