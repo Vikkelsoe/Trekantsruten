@@ -46,4 +46,10 @@ public class GameManagerShip : MonoBehaviour
     {
         Debug.Log(tries);
     }
+
+    public void Cheat()
+    {
+        GameObject.Find("ship").transform.position = new Vector3(-1, 0, 160);
+        GameObject.Find("snyd").SetActive(false);
+    }
 }
