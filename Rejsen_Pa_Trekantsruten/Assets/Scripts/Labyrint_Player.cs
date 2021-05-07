@@ -16,34 +16,16 @@ public class Labyrint_Player : MonoBehaviour
     public float speed = 2f; //styrer hastigheden på spilleren 
     Rigidbody2D rb;
 
-    float timer = 0; // Timer til highscoren
-
     private void Start()
     {
         btn.onClick.AddListener(Restart); //Restart()-funktionen kaldes, når "Genstart"-knappen tændes
         rb = GetComponent<Rigidbody2D>(); //rigidbody-komponenten hentes fra spiller-GameObjectet
     }
 
-    private void Update()
-    {
-        if (winPanel.activeSelf == false)
-        {
-            timer += Time.deltaTime;
-        }
-        if (winPanel.activeSelf == true)
-        {
-            // Opdatere tidens highscore, hvis den blev slået
-            if (timer < PlayerPrefs.GetFloat("Lab_Highscore") || PlayerPrefs.GetFloat("Lab_Highscore") <= 0)
-            {
-                PlayerPrefs.SetFloat("Lab_Highscore", timer);
-            }
-        }
-    }
-
-    //Move() kaldes, når en af Event Trigger-komponenterne på de fire bevægelses-kanpper aktiveres. Event Trigger-komponenten sender en attribut
+    //Move() kaldes, når en af Event Trigger-komponenterne på de fire bevægelses-kanpper aktiveres. Event Trigger-komponenten sender et argument
     public void Move(string button)
     {
-        //attribuen fra Event Triggeren opfanges i denne switch-case, og der dannes en vektor med den tilhørende bevægelse
+        //argumentet fra Event Triggeren opfanges i denne switch-case, og der dannes en vektor med den tilhørende bevægelse
         switch (button)
         {
             case "up":
@@ -58,7 +40,7 @@ public class Labyrint_Player : MonoBehaviour
             case "right":
                 rb.velocity = new Vector2(1 * speed, 0);
                 break;
-            case "stop": //når der ikke længere trykkes på knappen, bliver attributen "stop" sendt, og der dannes en nulvektor, som stopper bevægelsen
+            case "stop": //når der ikke længere trykkes på knappen, bliver argumentet "stop" sendt, og der dannes en nulvektor, som stopper bevægelsen
                 rb.velocity = new Vector2(0, 0);
                 break;
 
@@ -91,5 +73,12 @@ public class Labyrint_Player : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // En snydeknap, til hurtigt at komme igennem spillet.
+    public void Cheat()
+    {
+        this.transform.position = new Vector3(-0.5f, 4.25f, 0);
+        GameObject.Find("Snyd").SetActive(false);
     }
 }

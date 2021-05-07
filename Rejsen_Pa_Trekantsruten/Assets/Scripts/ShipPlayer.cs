@@ -14,7 +14,7 @@ public class ShipPlayer : MonoBehaviour
     void Start()
     {
         // Start posistionen på det objekt som scribtet ligger på bliveer brugt som position  
-        startPos = transform.position;
+        startPos = transform.position; 
         // Kompunentet rigidbody bruges til at fortælle hvor hurtigt spilleren bevæger sig 
         GetComponent<Rigidbody>().velocity = new Vector3(0,0, 2);
     }
@@ -49,7 +49,7 @@ public class ShipPlayer : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, height, transform.position.z);
     }
-    // 
+    //  IEnumerator sørger for at der skal være en pause på 1 sekund mellem baneskiftene, men ikke mere hvis der bliver trykket mange gange i træk på en knap
     IEnumerator StopLaneCh()
     {
         yield return new WaitForSeconds(1);
@@ -64,4 +64,5 @@ public class ShipPlayer : MonoBehaviour
             FindObjectOfType<GameManagerShip>().EndGame();
         }
     }
+    
 }
