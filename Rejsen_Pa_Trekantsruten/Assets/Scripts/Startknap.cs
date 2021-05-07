@@ -9,7 +9,6 @@ public class Startknap : MonoBehaviour
     {
 
         SceneManager.LoadScene(Vejledning);
-
     }
 
 
