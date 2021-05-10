@@ -47,7 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Scenes/Historie/HistorieP7.unity
     guid: bd9e7ec87a688d04d9bd45ba996d9e78
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game Scenes/Prove1.unity
     guid: 7cc24ab57224d401da14a5f586acc7f5
   - enabled: 1
