@@ -16,6 +16,11 @@ public class SceneLoader : MonoBehaviour
         btn.onClick.AddListener(ChangeScene); //når knappen trykkes, kaldes ChangeScene()-funktionen
     }
 
+    public void Escape()
+    {
+        Application.Quit();
+    }
+
     public void ChangeScene()
     {
         //det undersøges med et switch-case statement, hvad det aktive scenenavn er, og hvilken scene, der så skal loades
@@ -58,7 +63,9 @@ public class SceneLoader : MonoBehaviour
                 SceneManager.LoadScene("HistorieP7");
                 break;
         }
-        
+    }
+}
+
         /*
         if (sceneName == "Vejledning")
         {
@@ -97,5 +104,9 @@ public class SceneLoader : MonoBehaviour
             SceneManager.LoadScene("HistorieP7");
         }
         */
-    }
-}
+
+
+        // Lukker spillet 
+
+
+
