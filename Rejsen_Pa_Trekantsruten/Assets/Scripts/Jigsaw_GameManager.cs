@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,7 +42,7 @@ public class Jigsaw_GameManager : MonoBehaviour
             // Aktiverer vindeskærmen
             winScreen.SetActive(true);
             // Opdatere texten på vindeskærmen med hvor lang tid der blev brugt, og hvor mange gange kortet blev brugt.
-            winText.GetComponent<Text>().text = "Du har brugt " + timer + " sek. & \"Vis kort\" " + usedMap + " gange.";
+            winText.GetComponent<Text>().text = "Du har brugt " + Math.Round(timer, 1) + " sek. & \"Vis kort\" " + usedMap + " gange.";
 
             // Opdatere tidens highscore, hvis den blev slået
             if (timer < PlayerPrefs.GetFloat("Highscore_Time") || PlayerPrefs.GetFloat("Highscore_Time") < 0)
